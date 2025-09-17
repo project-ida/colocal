@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='colocal',
-    version='2025.09.16.18:23',  # GitHub Actions will auto-update this
+    version='2025.09.17.0126',  # GitHub Actions will auto-update this
     url='https://github.com/project-ida/colocal',
     license='MIT',
     author='project-ida',
