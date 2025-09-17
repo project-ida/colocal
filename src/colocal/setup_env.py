@@ -21,13 +21,19 @@ def setup():
         for cell in nb['cells']:
             if cell.get('cell_type') == 'markdown':
                 text = "".join(cell.get('source', []))
-                m = re.search(
-                    r'github/([^/]+)/([^/]+)/blob/([^/]+)/(.*?)(?:\\.ipynb|#|$)',
-                    text
-                )
-                if m:
-                    org, repo, branch, nb_relpath = m.groups()
-                    break
+                # Extract the first href link in the markdown cell
+                href_match = re.search(r'href="([^"]+)"', text)
+                if href_match:
+                    href = href_match.group(1)
+                    # Now parse out org, repo, branch, and path from the URL
+                    m = re.search(
+                        r'github/([^/]+)/([^/]+)/blob/([^/]+)/(.*?)(?:\.ipynb|#|$)',
+                        href
+                    )
+                    if m:
+                        org, repo, branch, nb_relpath = m.groups()
+                        break
+
 
         if not repo:
             raise RuntimeError("No Colab badge with repo info found")
