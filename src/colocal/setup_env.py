@@ -54,8 +54,8 @@ def setup():
         os.chdir(target_dir)
 
         print(f"[Colab] Repo: {repo} | Branch: {branch}")
-        print(f"sys.path[0] = {repo_root}")
-        print(f"cwd        = {os.getcwd()}")
+        print("[Colab] Repo root added to sys.path")
+        print(f"[Colab] Working directory set to: {os.path.relpath(target_dir, repo_root)}")
 
         return repo_root, branch, target_dir
 
@@ -75,8 +75,7 @@ def setup():
         sys.path.insert(0, str(repo_root))
         os.chdir(nb_dir)
 
-        print(f"[Local] Notebook: {nb_path.name}")
-        print(f"Repo root = {repo_root}")
-        print(f"cwd       = {os.getcwd()}")
+        print("[Local] Repo root added to sys.path")
+        print(f"[Local] Working directory set to: {os.path.relpath(nb_dir, repo_root)}")
 
         return str(repo_root), None, str(nb_dir)
