@@ -4,7 +4,7 @@
 
 `colocal` is a lightweight utility that harmonises notebook environments across **Google Colab** and **local Jupyter**.  
 
-It takes care of paths, imports, and working directories automatically, so your notebooks behave consistently no matter where you run them.  
+It takes care of paths, imports, and working directories automatically, so your notebooks behave consistently no matter where you run them.   
 
 ---
 
