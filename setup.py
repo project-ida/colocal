@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='clocal',
+    name='colocal',
     version='2025.09.16.18:23',  # GitHub Actions will auto-update this
-    url='https://github.com/project-ida/clocal',
+    url='https://github.com/project-ida/colocal',
     license='MIT',
     author='project-ida',
     description='Harmonises Jupyter and Colab notebook environments for consistent paths, imports, and working directories',
