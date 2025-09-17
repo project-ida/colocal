@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colocal"
+version = "0.1.0"
+description = "Normalises local Jupyter and Colab notebooks so they run consistently across environments"
+authors = [
+  { name="project-ida" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+
+dependencies = [
+  "ipynbname"
+]
+
+[project.urls]
+Homepage = "https://github.com/project-ida/colocal"
